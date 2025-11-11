@@ -1,0 +1,1631 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+      body {
+        margin: 0;
+      }
+      h1 a:hover {
+        font-size: 30px;
+        color: #333;
+      }
+      h1 a:active {
+        font-size: 30px;
+        color: #333;
+      }
+      h1 a:visited {
+        font-size: 30px;
+        color: #333;
+      }
+      a:hover {
+        text-decoration: none;
+      }
+      a:active {
+        text-decoration: none;
+      }
+      a:visited {
+        text-decoration: none;
+      }
+      .button__text:hover {
+        color: #fff;
+        text-decoration: none;
+      }
+      .button__text:active {
+        color: #fff;
+        text-decoration: none;
+      }
+      .button__text:visited {
+        color: #fff;
+        text-decoration: none;
+      }
+      a:hover {
+        color: #1990c6;
+      }
+      a:active {
+        color: #1990c6;
+      }
+      a:visited {
+        color: #1990c6;
+      }
+      @media (max-width: 600px) {
+        .container {
+          width: 94% !important;
+        }
+        .main-action-cell {
+          float: none !important;
+          margin-right: 0 !important;
+        }
+        .secondary-action-cell {
+          text-align: center;
+          width: 100%;
+        }
+        .header {
+          margin-top: 20px !important;
+          margin-bottom: 2px !important;
+        }
+        .shop-name__cell {
+          display: block;
+        }
+        .order-number__cell {
+          display: block;
+          text-align: left !important;
+          margin-top: 20px;
+        }
+        .po-number__cell {
+          display: block;
+          text-align: left !important;
+          margin-top: 5px;
+        }
+        .button {
+          width: 100%;
+        }
+        .or {
+          margin-right: 0 !important;
+        }
+        .apple-wallet-button {
+          text-align: center;
+        }
+        .customer-info__item {
+          display: block;
+          width: 100% !important;
+        }
+        .spacer {
+          display: none;
+        }
+        .subtotal-spacer {
+          display: none;
+        }
+        .return__mobile-padding {
+          margin-top: 19px;
+          padding-top: 19px;
+        }
+      }
+    </style>
+  </head>
+  <body style="margin: 0">
+    <title>Your order is ready for pickup</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <table
+      class="body"
+      style="
+        height: 100% !important;
+        width: 100% !important;
+        border-spacing: 0;
+        border-collapse: collapse;
+      "
+    >
+      <tbody>
+        <tr>
+          <td
+            style="
+              font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI',
+                'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+                'Droid Sans', 'Helvetica Neue', sans-serif;
+            "
+          >
+            <table
+              class="header row"
+              style="
+                width: 100%;
+                border-spacing: 0;
+                border-collapse: collapse;
+                margin: 40px 0 20px;
+              "
+            >
+              <tbody>
+                <tr>
+                  <td
+                    class="header__cell"
+                    style="
+                      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI',
+                        'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+                        'Droid Sans', 'Helvetica Neue', sans-serif;
+                    "
+                  >
+                    <center>
+                      <table
+                        class="container"
+                        style="
+                          width: 560px;
+                          text-align: left;
+                          border-spacing: 0;
+                          border-collapse: collapse;
+                          margin: 0 auto;
+                        "
+                      >
+                        <tbody>
+                          <tr>
+                            <td
+                              style="
+                                font-family: -apple-system, BlinkMacSystemFont,
+                                  'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+                                  'Cantarell', 'Fira Sans', 'Droid Sans',
+                                  'Helvetica Neue', sans-serif;
+                              "
+                            >
+                              <table
+                                class="row"
+                                style="
+                                  width: 100%;
+                                  border-spacing: 0;
+                                  border-collapse: collapse;
+                                "
+                              >
+                                <tbody>
+                                  <tr>
+                                    <td
+                                      class="shop-name__cell"
+                                      style="
+                                        font-family: -apple-system,
+                                          BlinkMacSystemFont, 'Segoe UI',
+                                          'Roboto', 'Oxygen', 'Ubuntu',
+                                          'Cantarell', 'Fira Sans', 'Droid Sans',
+                                          'Helvetica Neue', sans-serif;
+                                      "
+                                    >
+                                      <h1
+                                        class="shop-name__text"
+                                        style="
+                                          font-weight: normal;
+                                          font-size: 30px;
+                                          color: #333;
+                                          margin: 0;
+                                        "
+                                      >
+                                      {% if shop.email_logo_url %}
+                                      <img
+                                        src="{{ shop.email_logo_url }}"
+                                        alt="{{ shop.name }}"
+                                        width="{{ shop.email_logo_width }}"
+                                      />
+                                      {% else %}
+                                      <h1
+                                        class="shop-name__text"
+                                        style="
+                                          font-weight: normal;
+                                          font-size: 30px;
+                                          color: #333;
+                                          margin: 0;
+                                        "
+                                      >
+                                        <a
+                                          style="
+                                            font-size: 30px;
+                                            color: #333;
+                                            text-decoration: none;
+                                          "
+                                          >{{ shop.name }}</a
+                                        >
+                                      </h1>
+                                      {% endif %}
+                                    </td>
+
+                                    <td
+                                      style="
+                                        font-family: -apple-system,
+                                          BlinkMacSystemFont, 'Segoe UI',
+                                          'Roboto', 'Oxygen', 'Ubuntu',
+                                          'Cantarell', 'Fira Sans', 'Droid Sans',
+                                          'Helvetica Neue', sans-serif;
+                                      "
+                                    >
+                                      <table
+                                        class="order-po-number__container"
+                                        style="
+                                          border-spacing: 0;
+                                          border-collapse: collapse;
+                                          margin-left: auto;
+                                          margin-right: 0;
+                                        "
+                                      >
+                                        <tbody>
+                                          <tr>
+                                            <td
+                                              class="order-number__cell"
+                                              style="
+                                                font-family: -apple-system,
+                                                  BlinkMacSystemFont, 'Segoe UI',
+                                                  'Roboto', 'Oxygen', 'Ubuntu',
+                                                  'Cantarell', 'Fira Sans',
+                                                  'Droid Sans', 'Helvetica Neue',
+                                                  sans-serif;
+                                                text-transform: uppercase;
+                                                font-size: 14px;
+                                                color: #999;
+                                              "
+                                              align="right"
+                                            >
+                                              <span
+                                                class="order-number__text"
+                                                style="font-size: 16px"
+                                              >
+                                                Order {{ order.numberFormat |
+                                                default: '#0000' }}
+                                              </span>
+                                            </td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </center>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <table
+              class="row content"
+              style="width: 100%; border-spacing: 0; border-collapse: collapse"
+            >
+              <tbody>
+                <tr>
+                  <td
+                    class="content__cell"
+                    style="
+                      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI',
+                        'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+                        'Droid Sans', 'Helvetica Neue', sans-serif;
+                      padding-bottom: 40px;
+                      border-width: 0;
+                    "
+                  >
+                    <center>
+                      <table
+                        class="container"
+                        style="
+                          width: 560px;
+                          text-align: left;
+                          border-spacing: 0;
+                          border-collapse: collapse;
+                          margin: 0 auto;
+                        "
+                      >
+                        <tbody>
+                          <tr>
+                            <td
+                              style="
+                                font-family: -apple-system, BlinkMacSystemFont,
+                                  'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+                                  'Cantarell', 'Fira Sans', 'Droid Sans',
+                                  'Helvetica Neue', sans-serif;
+                              "
+                            >
+                              <h2
+                                style="
+                                  font-weight: normal;
+                                  font-size: 24px;
+                                  margin: 0 0 10px;
+                                "
+                              >
+                                Your order is ready for pickup
+                              </h2>
+
+                              <p
+                                style="
+                                  color: #777;
+                                  line-height: 150%;
+                                  font-size: 16px;
+                                  margin: 0;
+                                "
+                              >
+                                Bring your confirmation email when you come to
+                                collect your order.
+                              </p>
+
+                              <table
+                                class="section--margin"
+                                style="
+                                  border-spacing: 0;
+                                  border-collapse: collapse;
+                                  margin: 30px 0 40px;
+                                "
+                              >
+                                <tbody>
+                                  <tr>
+                                    <td
+                                      style="
+                                        font-family: -apple-system,
+                                          BlinkMacSystemFont, 'Segoe UI',
+                                          'Roboto', 'Oxygen', 'Ubuntu',
+                                          'Cantarell', 'Fira Sans', 'Droid Sans',
+                                          'Helvetica Neue', sans-serif;
+                                      "
+                                    >
+                                      <h4
+                                        style="
+                                          font-weight: 500;
+                                          font-size: 16px;
+                                          color: #555;
+                                          margin: 0 0 5px;
+                                        "
+                                      >
+                                        Pickup location
+                                      </h4>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td
+                                      style="
+                                        font-family: -apple-system,
+                                          BlinkMacSystemFont, 'Segoe UI',
+                                          'Roboto', 'Oxygen', 'Ubuntu',
+                                          'Cantarell', 'Fira Sans', 'Droid Sans',
+                                          'Helvetica Neue', sans-serif;
+                                      "
+                                    >
+                                      <p
+                                        style="
+                                          color: #777;
+                                          line-height: 150%;
+                                          font-size: 16px;
+                                          margin: 0;
+                                        "
+                                      >
+                                        {{ order.pickup.storeLocation.name |
+                                        default: shop.name }}
+                                      </p>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td
+                                      style="
+                                        font-family: -apple-system,
+                                          BlinkMacSystemFont, 'Segoe UI',
+                                          'Roboto', 'Oxygen', 'Ubuntu',
+                                          'Cantarell', 'Fira Sans', 'Droid Sans',
+                                          'Helvetica Neue', sans-serif;
+                                      "
+                                    >
+                                      <p
+                                        style="
+                                          color: #777;
+                                          line-height: 150%;
+                                          font-size: 16px;
+                                          margin: 0;
+                                        "
+                                      >
+                                        {{
+                                        order.pickup.storeLocation.addressLine1
+                                        || "" }}
+                                      </p>
+                                    </td>
+                                  </tr>
+
+                                  <tr>
+                                    <td
+                                      style="
+                                        font-family: -apple-system,
+                                          BlinkMacSystemFont, 'Segoe UI',
+                                          'Roboto', 'Oxygen', 'Ubuntu',
+                                          'Cantarell', 'Fira Sans', 'Droid Sans',
+                                          'Helvetica Neue', sans-serif;
+                                      "
+                                    >
+                                      <p
+                                        style="
+                                          color: #777;
+                                          line-height: 150%;
+                                          font-size: 16px;
+                                          margin: 0;
+                                        "
+                                      >
+                                        {{
+                                        order.pickup.storeLocation.addressLine2
+                                        || "" }}
+                                      </p>
+                                    </td>
+                                  </tr>
+
+                                  <tr>
+                                    <td
+                                      style="
+                                        font-family: -apple-system,
+                                          BlinkMacSystemFont, 'Segoe UI',
+                                          'Roboto', 'Oxygen', 'Ubuntu',
+                                          'Cantarell', 'Fira Sans', 'Droid Sans',
+                                          'Helvetica Neue', sans-serif;
+                                      "
+                                    >
+                                      <p
+                                        style="
+                                          color: #777;
+                                          line-height: 150%;
+                                          font-size: 16px;
+                                          margin: 0;
+                                        "
+                                      >
+                                        {{ order.pickup.storeLocation.city || ""
+                                        }}
+                                      </p>
+                                    </td>
+                                  </tr>
+
+                                  <tr>
+                                    <td
+                                      style="
+                                        font-family: -apple-system,
+                                          BlinkMacSystemFont, 'Segoe UI',
+                                          'Roboto', 'Oxygen', 'Ubuntu',
+                                          'Cantarell', 'Fira Sans', 'Droid Sans',
+                                          'Helvetica Neue', sans-serif;
+                                      "
+                                    >
+                                      <p
+                                        style="
+                                          color: #777;
+                                          line-height: 150%;
+                                          font-size: 16px;
+                                          margin: 0;
+                                        "
+                                      >
+                                        {{ order.pickup.storeLocation.province
+                                        || "" }}&nbsp;{{
+                                        order.pickup.storeLocation.postalCode ||
+                                        "" }}
+                                      </p>
+                                    </td>
+                                  </tr>
+
+                                  <tr>
+                                    <td
+                                      class="empty-line"
+                                      style="
+                                        font-family: -apple-system,
+                                          BlinkMacSystemFont, 'Segoe UI',
+                                          'Roboto', 'Oxygen', 'Ubuntu',
+                                          'Cantarell', 'Fira Sans', 'Droid Sans',
+                                          'Helvetica Neue', sans-serif;
+                                        line-height: 0em;
+                                      "
+                                    >
+                                      &nbsp;
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td
+                                      style="
+                                        font-family: -apple-system,
+                                          BlinkMacSystemFont, 'Segoe UI',
+                                          'Roboto', 'Oxygen', 'Ubuntu',
+                                          'Cantarell', 'Fira Sans', 'Droid Sans',
+                                          'Helvetica Neue', sans-serif;
+                                      "
+                                    >
+                                      <a
+                                        target="_blank"
+                                        style="
+                                          font-size: 16px;
+                                          text-decoration: none;
+                                          color: #1990c6;
+                                        "
+                                      >
+                                        Open map&nbsp;
+                                        <span
+                                          class="small"
+                                          style="font-size: 14px"
+                                          >→</span
+                                        >
+                                      </a>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+
+                              <table
+                                class="row actions"
+                                style="
+                                  width: 100%;
+                                  border-spacing: 0;
+                                  border-collapse: collapse;
+                                  margin-top: 20px;
+                                "
+                              >
+                                <tbody>
+                                  <tr>
+                                    <td
+                                      class="empty-line"
+                                      style="
+                                        font-family: -apple-system,
+                                          BlinkMacSystemFont, 'Segoe UI',
+                                          'Roboto', 'Oxygen', 'Ubuntu',
+                                          'Cantarell', 'Fira Sans', 'Droid Sans',
+                                          'Helvetica Neue', sans-serif;
+                                        line-height: 0em;
+                                      "
+                                    >
+                                      &nbsp;
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td
+                                      class="actions__cell"
+                                      style="
+                                        font-family: -apple-system,
+                                          BlinkMacSystemFont, 'Segoe UI',
+                                          'Roboto', 'Oxygen', 'Ubuntu',
+                                          'Cantarell', 'Fira Sans', 'Droid Sans',
+                                          'Helvetica Neue', sans-serif;
+                                      "
+                                    >
+                                      <table
+                                        class="button main-action-cell"
+                                        style="
+                                          border-spacing: 0;
+                                          border-collapse: collapse;
+                                          float: left;
+                                          margin-right: 15px;
+                                        "
+                                      >
+                                        <tbody>
+                                          <tr>
+                                            <td
+                                              class="button__cell"
+                                              style="
+                                                font-family: -apple-system,
+                                                  BlinkMacSystemFont, 'Segoe UI',
+                                                  'Roboto', 'Oxygen', 'Ubuntu',
+                                                  'Cantarell', 'Fira Sans',
+                                                  'Droid Sans', 'Helvetica Neue',
+                                                  sans-serif;
+                                                border-radius: 4px;
+                                              "
+                                              align="center"
+                                              bgcolor="#1990C6"
+                                            >
+                                              <a
+                                                class="button__text"
+                                                style="
+                                                  font-size: 16px;
+                                                  text-decoration: none;
+                                                  display: block;
+                                                  color: #fff;
+                                                  padding: 20px 25px;
+                                                "
+                                                >View your order</a
+                                              >
+                                            </td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+
+                                      <table
+                                        class="link secondary-action-cell"
+                                        style="
+                                          border-spacing: 0;
+                                          border-collapse: collapse;
+                                          margin-top: 19px;
+                                        "
+                                      >
+                                        <tbody>
+                                          <tr>
+                                            <td
+                                              class="link__cell"
+                                              style="
+                                                font-family: -apple-system,
+                                                  BlinkMacSystemFont, 'Segoe UI',
+                                                  'Roboto', 'Oxygen', 'Ubuntu',
+                                                  'Cantarell', 'Fira Sans',
+                                                  'Droid Sans', 'Helvetica Neue',
+                                                  sans-serif;
+                                                border-radius: 4px;
+                                              "
+                                              align="center"
+                                            >
+                                              or
+                                              <a
+                                                style="
+                                                  font-size: 16px;
+                                                  text-decoration: none;
+                                                  color: #1990c6;
+                                                "
+                                                >Visit our store</a
+                                              >
+                                            </td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </center>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <table
+              class="row section"
+              style="width: 100%; border-spacing: 0; border-collapse: collapse"
+            >
+              <tbody>
+                <tr>
+                  <td
+                    class="section__cell"
+                    style="
+                      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI',
+                        'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+                        'Droid Sans', 'Helvetica Neue', sans-serif;
+                      padding: 40px 0;
+                    "
+                  >
+                    <center>
+                      <table
+                        class="container"
+                        style="
+                          width: 560px;
+                          text-align: left;
+                          border-spacing: 0;
+                          border-collapse: collapse;
+                          margin: 0 auto;
+                        "
+                      >
+                        <tbody>
+                          <tr>
+                            <td
+                              style="
+                                font-family: -apple-system, BlinkMacSystemFont,
+                                  'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+                                  'Cantarell', 'Fira Sans', 'Droid Sans',
+                                  'Helvetica Neue', sans-serif;
+                              "
+                            >
+                              <h3
+                                style="
+                                  font-weight: normal;
+                                  font-size: 20px;
+                                  margin: 0 0 25px;
+                                "
+                              >
+                                Order summary
+                              </h3>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <table
+                        class="container"
+                        style="
+                          width: 560px;
+                          text-align: left;
+                          border-spacing: 0;
+                          border-collapse: collapse;
+                          margin: 0 auto;
+                        "
+                      >
+                        <tbody>
+                          <tr>
+                            <td
+                              style="
+                                font-family: -apple-system, BlinkMacSystemFont,
+                                  'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+                                  'Cantarell', 'Fira Sans', 'Droid Sans',
+                                  'Helvetica Neue', sans-serif;
+                              "
+                            >
+                              <table
+                                class="row"
+                                style="
+                                  width: 100%;
+                                  border-spacing: 0;
+                                  border-collapse: collapse;
+                                "
+                              >
+                                <tbody>
+                                  <!-- items -->
+                                  {% for item in order.items %}
+                                  <tr
+                                    class="order-list__item"
+                                    style="
+                                      width: 100%;
+                                      border-top-width: 1px;
+                                      border-top-color: #e5e5e5;
+                                      border-top-style: solid;
+                                    "
+                                  >
+                                    <td
+                                      class="order-list__item__cell"
+                                      style="
+                                        font-family: -apple-system,
+                                          BlinkMacSystemFont, 'Segoe UI',
+                                          'Roboto', 'Oxygen', 'Ubuntu',
+                                          'Cantarell', 'Fira Sans', 'Droid Sans',
+                                          'Helvetica Neue', sans-serif;
+                                        padding-top: 15px;
+                                        padding-bottom: 15px;
+                                      "
+                                    >
+                                      <table
+                                        height="100%"
+                                        style="
+                                          border-spacing: 0;
+                                          border-collapse: collapse;
+                                        "
+                                      >
+                                        <tbody>
+                                          <tr>
+                                            <td
+                                              style="
+                                                padding-bottom: 0px;
+                                                font-family: -apple-system,
+                                                  BlinkMacSystemFont, 'Segoe UI',
+                                                  'Roboto', 'Oxygen', 'Ubuntu',
+                                                  'Cantarell', 'Fira Sans',
+                                                  'Droid Sans', 'Helvetica Neue',
+                                                  sans-serif;
+                                              "
+                                            >
+                                              <table
+                                                height="100%"
+                                                style="
+                                                  border-spacing: 0;
+                                                  border-collapse: collapse;
+                                                "
+                                              >
+                                                <tbody>
+                                                  <tr valign="top">
+                                                    <td
+                                                      class="order-list__image-cell"
+                                                      style="
+                                                        font-family: -apple-system,
+                                                          BlinkMacSystemFont,
+                                                          'Segoe UI', 'Roboto',
+                                                          'Oxygen', 'Ubuntu',
+                                                          'Cantarell',
+                                                          'Fira Sans',
+                                                          'Droid Sans',
+                                                          'Helvetica Neue',
+                                                          sans-serif;
+                                                      "
+                                                      valign="middle"
+                                                    >
+                                                      <img
+                                                        src="{{ item.product.media[0].fileUrl }}"
+                                                        align="left"
+                                                        width="60"
+                                                        height="60"
+                                                        class="order-list__product-image"
+                                                        style="
+                                                          margin-right: 15px;
+                                                          border-radius: 8px;
+                                                          border: 1px solid
+                                                            #e5e5e5;
+                                                        "
+                                                      />
+                                                    </td>
+                                                  </tr>
+                                                </tbody>
+                                              </table>
+                                            </td>
+
+                                            <td
+                                              class="order-list__product-description-cell"
+                                              style="
+                                                font-family: -apple-system,
+                                                  BlinkMacSystemFont, 'Segoe UI',
+                                                  'Roboto', 'Oxygen', 'Ubuntu',
+                                                  'Cantarell', 'Fira Sans',
+                                                  'Droid Sans', 'Helvetica Neue',
+                                                  sans-serif;
+                                                width: 100%;
+                                              "
+                                            >
+                                              <span
+                                                class="order-list__item-title"
+                                                style="
+                                                  font-size: 16px;
+                                                  font-weight: 600;
+                                                  line-height: 1.4;
+                                                  color: #555;
+                                                "
+                                                >{{ item.product.name
+                                                }}&nbsp;×&nbsp;{{ item.quantity
+                                                }}</span
+                                              ><br />
+
+                                              <span
+                                                class="order-list__item-variant"
+                                                style="
+                                                  font-size: 14px;
+                                                  color: #999;
+                                                  font-weight: 400;
+                                                "
+                                                >{{ item.variant.name }}</span
+                                              ><br />
+
+                                              {% for discount in item.discounts
+                                              %}
+                                              <p
+                                                style="
+                                                  color: #777;
+                                                  line-height: 150%;
+                                                  font-size: 16px;
+                                                  margin: 4px 0 0;
+                                                "
+                                              >
+                                                <span
+                                                  class="order-list__item-discount-allocation"
+                                                  style="
+                                                    font-size: 14px;
+                                                    display: block;
+                                                    line-height: 1.4;
+                                                    margin: 1px 0 0;
+                                                  "
+                                                >
+                                                  <img
+                                                    src="https://cdn.shopify.com/shopifycloud/shopify/assets/themes_support/notifications/discounttag-23d3dd52a101179fb1461daaba6b77388b99b6154de85840a5245b8d3930a68e.png"
+                                                    width="18"
+                                                    height="18"
+                                                    class="discount-tag-icon"
+                                                    style="
+                                                      vertical-align: middle;
+                                                      margin-right: 6px;
+                                                    "
+                                                  />
+                                                  <span
+                                                    style="
+                                                      font-size: 14px;
+                                                      margin-left: -4px;
+                                                    "
+                                                  >
+                                                    {{
+                                                    discount.discountSchema.code
+                                                    }} (-{{
+                                                    discount.discountSchema.value
+                                                    | default: 0 | money }})
+                                                  </span>
+                                                </span>
+                                              </p>
+                                              {% endfor %}
+                                            </td>
+
+                                            <td
+                                              class="order-list__price-cell"
+                                              style="
+                                                font-family: -apple-system,
+                                                  BlinkMacSystemFont, 'Segoe UI',
+                                                  'Roboto', 'Oxygen', 'Ubuntu',
+                                                  'Cantarell', 'Fira Sans',
+                                                  'Droid Sans', 'Helvetica Neue',
+                                                  sans-serif;
+                                                white-space: nowrap;
+                                              "
+                                            >
+                                              <del
+                                                class="order-list__item-original-price"
+                                                style="
+                                                  font-size: 14px;
+                                                  display: block;
+                                                  text-align: right;
+                                                  color: #999;
+                                                "
+                                              >
+                                                {{ item.compareAtPrice |
+                                                default: 0 | money }}
+                                              </del>
+
+                                              <p
+                                                class="order-list__item-price"
+                                                style="
+                                                  color: #555;
+                                                  line-height: 150%;
+                                                  font-size: 16px;
+                                                  font-weight: 600;
+                                                  margin: 4px 0 0 15px;
+                                                "
+                                                align="right"
+                                              >
+                                                {{ item.price | default: 0 |
+                                                money }}
+                                              </p>
+                                            </td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                  {% endfor %}
+                                </tbody>
+                              </table>
+
+                              <table
+                                class="row subtotal-lines"
+                                style="
+                                  width: 100%;
+                                  border-spacing: 0;
+                                  border-collapse: collapse;
+                                  margin-top: 15px;
+                                  border-top-width: 1px;
+                                  border-top-color: #e5e5e5;
+                                  border-top-style: solid;
+                                "
+                              >
+                                <tbody>
+                                  <tr>
+                                    <td
+                                      class="subtotal-spacer"
+                                      style="
+                                        font-family: -apple-system,
+                                          BlinkMacSystemFont, 'Segoe UI',
+                                          'Roboto', 'Oxygen', 'Ubuntu',
+                                          'Cantarell', 'Fira Sans', 'Droid Sans',
+                                          'Helvetica Neue', sans-serif;
+                                        width: 40%;
+                                      "
+                                    ></td>
+                                    <td
+                                      style="
+                                        font-family: -apple-system,
+                                          BlinkMacSystemFont, 'Segoe UI',
+                                          'Roboto', 'Oxygen', 'Ubuntu',
+                                          'Cantarell', 'Fira Sans', 'Droid Sans',
+                                          'Helvetica Neue', sans-serif;
+                                      "
+                                    >
+                                      <table
+                                        class="row subtotal-table"
+                                        style="
+                                          width: 100%;
+                                          border-spacing: 0;
+                                          border-collapse: collapse;
+                                          margin-top: 20px;
+                                        "
+                                      >
+                                        <tbody>
+                                          <table
+                                            class="row subtotal-table"
+                                            style="
+                                              width: 100%;
+                                              border-spacing: 0;
+                                              border-collapse: collapse;
+                                              margin-top: 20px;
+                                            "
+                                          >
+                                            <tbody>
+                                              <tr class="subtotal-line">
+                                                <td
+                                                  class="subtotal-line__title"
+                                                  style="
+                                                    font-family: -apple-system,
+                                                      BlinkMacSystemFont,
+                                                      'Segoe UI', 'Roboto',
+                                                      'Oxygen', 'Ubuntu',
+                                                      'Cantarell', 'Fira Sans',
+                                                      'Droid Sans',
+                                                      'Helvetica Neue',
+                                                      sans-serif;
+                                                    padding: 2px 0;
+                                                  "
+                                                >
+                                                  <p
+                                                    style="
+                                                      color: #777;
+                                                      line-height: 1.2em;
+                                                      font-size: 16px;
+                                                      margin: 4px 0 0;
+                                                    "
+                                                  >
+                                                    <span
+                                                      style="font-size: 16px"
+                                                      >Subtotal</span
+                                                    >
+                                                  </p>
+                                                </td>
+                                                <td
+                                                  class="subtotal-line__value"
+                                                  style="
+                                                    font-family: -apple-system,
+                                                      BlinkMacSystemFont,
+                                                      'Segoe UI', 'Roboto',
+                                                      'Oxygen', 'Ubuntu',
+                                                      'Cantarell', 'Fira Sans',
+                                                      'Droid Sans',
+                                                      'Helvetica Neue',
+                                                      sans-serif;
+                                                    padding: 2px 0;
+                                                  "
+                                                  align="right"
+                                                >
+                                                  <strong
+                                                    style="
+                                                      font-size: 16px;
+                                                      color: #555;
+                                                    "
+                                                    >{{ order.subtotal |
+                                                    default: 0 | money
+                                                    }}</strong
+                                                  >
+                                                </td>
+                                              </tr>
+
+                                              <tr class="subtotal-line">
+                                                <td
+                                                  class="subtotal-line__title"
+                                                  style="
+                                                    font-family: -apple-system,
+                                                      BlinkMacSystemFont,
+                                                      'Segoe UI', 'Roboto',
+                                                      'Oxygen', 'Ubuntu',
+                                                      'Cantarell', 'Fira Sans',
+                                                      'Droid Sans',
+                                                      'Helvetica Neue',
+                                                      sans-serif;
+                                                    padding: 2px 0;
+                                                  "
+                                                >
+                                                  <p
+                                                    style="
+                                                      color: #777;
+                                                      line-height: 1.2em;
+                                                      font-size: 16px;
+                                                      margin: 4px 0 0;
+                                                    "
+                                                  >
+                                                    <span
+                                                      style="font-size: 16px"
+                                                      >Order discount</span
+                                                    >
+                                                  </p>
+                                                </td>
+                                                <td
+                                                  class="subtotal-line__value"
+                                                  style="
+                                                    font-family: -apple-system,
+                                                      BlinkMacSystemFont,
+                                                      'Segoe UI', 'Roboto',
+                                                      'Oxygen', 'Ubuntu',
+                                                      'Cantarell', 'Fira Sans',
+                                                      'Droid Sans',
+                                                      'Helvetica Neue',
+                                                      sans-serif;
+                                                    padding: 2px 0;
+                                                  "
+                                                  align="right"
+                                                >
+                                                  <strong
+                                                    style="
+                                                      font-size: 16px;
+                                                      color: #555;
+                                                    "
+                                                    >-{{
+                                                    order.totalDiscountAmount |
+                                                    default: 0 | money
+                                                    }}</strong
+                                                  >
+                                                </td>
+                                              </tr>
+
+                                              {% if order.discounts.size > 0 %}
+                                              {% for discount in order.discounts
+                                              %}
+                                              <tr class="subtotal-line">
+                                                <td
+                                                  class="subtotal-line__title"
+                                                  style="
+                                                    font-family: -apple-system,
+                                                      BlinkMacSystemFont,
+                                                      'Segoe UI', 'Roboto',
+                                                      'Oxygen', 'Ubuntu',
+                                                      'Cantarell', 'Fira Sans',
+                                                      'Droid Sans',
+                                                      'Helvetica Neue',
+                                                      sans-serif;
+                                                    padding: 2px 0;
+                                                  "
+                                                >
+                                                  <p
+                                                    style="
+                                                      color: #777;
+                                                      line-height: 1.2em;
+                                                      font-size: 16px;
+                                                      margin: 4px 0 0;
+                                                    "
+                                                  >
+                                                    <span
+                                                      class="subtotal-line__discount"
+                                                      style="
+                                                        font-size: 16px;
+                                                        margin-left: 5px;
+                                                      "
+                                                    >
+                                                      <img
+                                                        src="https://cdn.shopify.com/shopifycloud/shopify/assets/themes_support/notifications/discounttag-23d3dd52a101179fb1461daaba6b77388b99b6154de85840a5245b8d3930a68e.png"
+                                                        width="18"
+                                                        height="18"
+                                                        class="discount-tag-icon"
+                                                        style="
+                                                          vertical-align: middle;
+                                                          margin-right: 6px;
+                                                        "
+                                                      />
+                                                      <span
+                                                        class="subtotal-line__discount-title"
+                                                        style="
+                                                          font-size: 16px;
+                                                          margin-left: -4px;
+                                                        "
+                                                      >
+                                                        {{
+                                                        discount.discountSchema.code
+                                                        }} (-{{
+                                                        discount.discountSchema.value
+                                                        | default: 0 | money }})
+                                                      </span>
+                                                    </span>
+                                                  </p>
+                                                </td>
+                                              </tr>
+                                              {% endfor %} {% endif %}
+
+                                              <tr class="subtotal-line">
+                                                <td
+                                                  class="subtotal-line__title"
+                                                  style="
+                                                    font-family: -apple-system,
+                                                      BlinkMacSystemFont,
+                                                      'Segoe UI', 'Roboto',
+                                                      'Oxygen', 'Ubuntu',
+                                                      'Cantarell', 'Fira Sans',
+                                                      'Droid Sans',
+                                                      'Helvetica Neue',
+                                                      sans-serif;
+                                                    padding: 2px 0;
+                                                  "
+                                                >
+                                                  <p
+                                                    style="
+                                                      color: #777;
+                                                      line-height: 1.2em;
+                                                      font-size: 16px;
+                                                      margin: 4px 0 0;
+                                                    "
+                                                  >
+                                                    <span
+                                                      style="font-size: 16px"
+                                                      >Shipping</span
+                                                    >
+                                                  </p>
+                                                </td>
+                                                <td
+                                                  class="subtotal-line__value"
+                                                  style="
+                                                    font-family: -apple-system,
+                                                      BlinkMacSystemFont,
+                                                      'Segoe UI', 'Roboto',
+                                                      'Oxygen', 'Ubuntu',
+                                                      'Cantarell', 'Fira Sans',
+                                                      'Droid Sans',
+                                                      'Helvetica Neue',
+                                                      sans-serif;
+                                                    padding: 2px 0;
+                                                  "
+                                                  align="right"
+                                                >
+                                                  <del
+                                                    style="
+                                                      font-size: 16px;
+                                                      margin-right: 8px;
+                                                      color: #6d7175;
+                                                    "
+                                                    >{{ order.shippingFee |
+                                                    default: 0 | money }}
+                                                  </del>
+                                                  {% if order.shippingFee > 0 or
+                                                  order.discountShipping %}
+                                                  <strong
+                                                    style="
+                                                      font-size: 16px;
+                                                      color: #555;
+                                                    "
+                                                    >Free</strong
+                                                  >
+                                                  {% endif %}
+                                                </td>
+                                              </tr>
+
+                                              {% if order.discountShipping %}
+                                              <tr class="subtotal-line">
+                                                <td
+                                                  class="subtotal-line__title"
+                                                  style="
+                                                    font-family: -apple-system,
+                                                      BlinkMacSystemFont,
+                                                      'Segoe UI', 'Roboto',
+                                                      'Oxygen', 'Ubuntu',
+                                                      'Cantarell', 'Fira Sans',
+                                                      'Droid Sans',
+                                                      'Helvetica Neue',
+                                                      sans-serif;
+                                                    padding: 2px 0;
+                                                  "
+                                                >
+                                                  <p
+                                                    style="
+                                                      color: #777;
+                                                      line-height: 1.2em;
+                                                      font-size: 16px;
+                                                      margin: 4px 0 0;
+                                                    "
+                                                  >
+                                                    <span
+                                                      class="subtotal-line__discount"
+                                                      style="
+                                                        font-size: 16px;
+                                                        margin-left: 5px;
+                                                      "
+                                                    >
+                                                      <img
+                                                        src="https://cdn.shopify.com/shopifycloud/shopify/assets/themes_support/notifications/discounttag-23d3dd52a101179fb1461daaba6b77388b99b6154de85840a5245b8d3930a68e.png"
+                                                        width="18"
+                                                        height="18"
+                                                        class="discount-tag-icon"
+                                                        style="
+                                                          vertical-align: middle;
+                                                          margin-right: 6px;
+                                                        "
+                                                      />
+                                                      <span
+                                                        class="subtotal-line__discount-title"
+                                                        style="
+                                                          font-size: 16px;
+                                                          margin-left: -4px;
+                                                        "
+                                                      >
+                                                        {{
+                                                        discountShipping.discountSchema.code
+                                                        }} (-{{
+                                                        discountShipping.discountSchema.value
+                                                        | default: 0 | money }})
+                                                      </span>
+                                                    </span>
+                                                  </p>
+                                                </td>
+                                              </tr>
+                                              {% endif %}
+
+                                              <tr class="subtotal-line">
+                                                <td
+                                                  class="subtotal-line__title"
+                                                  style="
+                                                    font-family: -apple-system,
+                                                      BlinkMacSystemFont,
+                                                      'Segoe UI', 'Roboto',
+                                                      'Oxygen', 'Ubuntu',
+                                                      'Cantarell', 'Fira Sans',
+                                                      'Droid Sans',
+                                                      'Helvetica Neue',
+                                                      sans-serif;
+                                                    padding: 2px 0;
+                                                  "
+                                                >
+                                                  <p
+                                                    style="
+                                                      color: #777;
+                                                      line-height: 1.2em;
+                                                      font-size: 16px;
+                                                      margin: 4px 0 0;
+                                                    "
+                                                  >
+                                                    <span
+                                                      style="font-size: 16px"
+                                                      >Taxes</span
+                                                    >
+                                                  </p>
+                                                </td>
+                                                <td
+                                                  class="subtotal-line__value"
+                                                  style="
+                                                    font-family: -apple-system,
+                                                      BlinkMacSystemFont,
+                                                      'Segoe UI', 'Roboto',
+                                                      'Oxygen', 'Ubuntu',
+                                                      'Cantarell', 'Fira Sans',
+                                                      'Droid Sans',
+                                                      'Helvetica Neue',
+                                                      sans-serif;
+                                                    padding: 2px 0;
+                                                  "
+                                                  align="right"
+                                                >
+                                                  <strong
+                                                    style="
+                                                      font-size: 16px;
+                                                      color: #555;
+                                                    "
+                                                    >{{ order.totalTax |
+                                                    default: 0 }}</strong
+                                                  >
+                                                </td>
+                                              </tr>
+                                            </tbody>
+                                          </table>
+                                        </tbody>
+                                      </table>
+
+                                      <table
+                                        class="row subtotal-table subtotal-table--total"
+                                        style="
+                                          width: 100%;
+                                          border-spacing: 0;
+                                          border-collapse: collapse;
+                                          margin-top: 20px;
+                                          border-top-width: 2px;
+                                          border-top-color: #e5e5e5;
+                                          border-top-style: solid;
+                                        "
+                                      >
+                                        <tbody>
+                                          <tr class="subtotal-line">
+                                            <td
+                                              class="subtotal-line__title"
+                                              style="
+                                                font-family: -apple-system,
+                                                  BlinkMacSystemFont, 'Segoe UI',
+                                                  'Roboto', 'Oxygen', 'Ubuntu',
+                                                  'Cantarell', 'Fira Sans',
+                                                  'Droid Sans', 'Helvetica Neue',
+                                                  sans-serif;
+                                                padding: 20px 0 0;
+                                              "
+                                            >
+                                              <p
+                                                style="
+                                                  color: #777;
+                                                  line-height: 1.2em;
+                                                  font-size: 16px;
+                                                  margin: 4px 0 0;
+                                                "
+                                              >
+                                                <span style="font-size: 16px"
+                                                  >Total</span
+                                                >
+                                              </p>
+                                            </td>
+                                            <td
+                                              class="subtotal-line__value"
+                                              style="
+                                                font-family: -apple-system,
+                                                  BlinkMacSystemFont, 'Segoe UI',
+                                                  'Roboto', 'Oxygen', 'Ubuntu',
+                                                  'Cantarell', 'Fira Sans',
+                                                  'Droid Sans', 'Helvetica Neue',
+                                                  sans-serif;
+                                                padding: 20px 0 0;
+                                              "
+                                              align="right"
+                                            >
+                                              <strong
+                                                style="
+                                                  font-size: 24px;
+                                                  color: #555;
+                                                "
+                                                >{{ order.subtotal | default: 0
+                                                | money_with_currency }}</strong
+                                              >
+                                            </td>
+                                          </tr>
+
+                                          {% if order.totalDiscountAmount > 0 %}
+                                          <tr class="subtotal-line">
+                                            <td
+                                              style="
+                                                font-family: -apple-system,
+                                                  BlinkMacSystemFont, 'Segoe UI',
+                                                  'Roboto', 'Oxygen', 'Ubuntu',
+                                                  'Cantarell', 'Fira Sans',
+                                                  'Droid Sans', 'Helvetica Neue',
+                                                  sans-serif;
+                                                padding: 20px 0 0;
+                                              "
+                                            ></td>
+                                            <td
+                                              class="subtotal-line__value total-discount"
+                                              style="
+                                                font-family: -apple-system,
+                                                  BlinkMacSystemFont, 'Segoe UI',
+                                                  'Roboto', 'Oxygen', 'Ubuntu',
+                                                  'Cantarell', 'Fira Sans',
+                                                  'Droid Sans', 'Helvetica Neue',
+                                                  sans-serif;
+                                                color: #777;
+                                                font-size: 16px;
+                                                line-height: 1.1;
+                                                margin-top: 10px;
+                                                padding: 20px 0 0;
+                                              "
+                                              align="right"
+                                            >
+                                              You saved
+                                              <span
+                                                class="total-discount--amount"
+                                                style="
+                                                  font-size: 16px;
+                                                  color: #555;
+                                                "
+                                                >{{ order.totalDiscountAmount |
+                                                default: 0 | money }}</span
+                                              >
+                                            </td>
+                                          </tr>
+                                          {% endif %}
+                                        </tbody>
+                                      </table>
+
+                                      <table
+                                        class="row subtotal-table"
+                                        style="
+                                          width: 100%;
+                                          border-spacing: 0;
+                                          border-collapse: collapse;
+                                          margin-top: 20px;
+                                        "
+                                      >
+                                        <tbody>
+                                          <tr>
+                                            <td
+                                              colspan="2"
+                                              class="subtotal-table__line"
+                                              style="
+                                                font-family: -apple-system,
+                                                  BlinkMacSystemFont, 'Segoe UI',
+                                                  'Roboto', 'Oxygen', 'Ubuntu',
+                                                  'Cantarell', 'Fira Sans',
+                                                  'Droid Sans', 'Helvetica Neue',
+                                                  sans-serif;
+                                                border-bottom-width: 1px;
+                                                border-bottom-color: #e5e5e5;
+                                                border-bottom-style: solid;
+                                                height: 1px;
+                                                padding: 0;
+                                              "
+                                            ></td>
+                                          </tr>
+                                          <tr>
+                                            <td
+                                              colspan="2"
+                                              class="subtotal-table__small-space"
+                                              style="
+                                                font-family: -apple-system,
+                                                  BlinkMacSystemFont, 'Segoe UI',
+                                                  'Roboto', 'Oxygen', 'Ubuntu',
+                                                  'Cantarell', 'Fira Sans',
+                                                  'Droid Sans', 'Helvetica Neue',
+                                                  sans-serif;
+                                                height: 10px;
+                                              "
+                                            ></td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </center>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <table
+              class="row footer"
+              style="
+                width: 100%;
+                border-spacing: 0;
+                border-collapse: collapse;
+                border-top-width: 1px;
+                border-top-color: #e5e5e5;
+                border-top-style: solid;
+              "
+            >
+              <tbody>
+                <tr>
+                  <td
+                    class="footer__cell"
+                    style="
+                      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI',
+                        'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+                        'Droid Sans', 'Helvetica Neue', sans-serif;
+                      padding: 35px 0;
+                    "
+                  >
+                    <center>
+                      <table
+                        class="container"
+                        style="
+                          width: 560px;
+                          text-align: left;
+                          border-spacing: 0;
+                          border-collapse: collapse;
+                          margin: 0 auto;
+                        "
+                      >
+                        <tbody>
+                          <tr>
+                            <td
+                              style="
+                                font-family: -apple-system, BlinkMacSystemFont,
+                                  'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+                                  'Cantarell', 'Fira Sans', 'Droid Sans',
+                                  'Helvetica Neue', sans-serif;
+                              "
+                            >
+                              <p
+                                class="disclaimer__subtext"
+                                style="
+                                  color: #999;
+                                  line-height: 150%;
+                                  font-size: 14px;
+                                  margin: 0;
+                                "
+                              >
+                                If you have any questions, reply to this email
+                                or contact us at
+                                <a
+                                  style="
+                                    font-size: 14px;
+                                    text-decoration: none;
+                                    color: #1990c6;
+                                  "
+                                  >{{ shop.email }}</a
+                                >
+                              </p>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </center>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <img
+              src="https://cdn.shopify.com/shopifycloud/shopify/assets/themes_support/notifications/spacer-1a26dfd5c56b21ac888f9f1610ef81191b571603cb207c6c0f564148473cab3c.png"
+              class="spacer"
+              height="1"
+              style="min-width: 600px; height: 0"
+            />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
