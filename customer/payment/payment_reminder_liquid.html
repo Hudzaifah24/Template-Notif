@@ -1,3 +1,5 @@
+{% capture email_title %} Payment reminder for order {{ order.numberFormat }} {%
+endcapture %}
 <html>
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -103,13 +105,12 @@
     </style>
   </head>
   <body style="margin: 0">
-    <title>Here's your gift card that was sent to Bobby.</title>
+    <title>{{ email_title }}</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width" />
 
     <table
-      align="center"
-      class="body giftcard__body"
+      class="body"
       style="
         height: 100% !important;
         width: 100% !important;
@@ -120,38 +121,159 @@
       <tbody>
         <tr>
           <td
-            class="empty-line"
-            style="
-              font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI',
-                'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
-                'Droid Sans', 'Helvetica Neue', sans-serif;
-              line-height: 0em;
-            "
-          >
-            &nbsp;
-          </td>
-        </tr>
-        <tr>
-          <td
-            class="empty-line"
-            style="
-              font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI',
-                'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
-                'Droid Sans', 'Helvetica Neue', sans-serif;
-              line-height: 0em;
-            "
-          >
-            &nbsp;
-          </td>
-        </tr>
-        <tr>
-          <td
             style="
               font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI',
                 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
                 'Droid Sans', 'Helvetica Neue', sans-serif;
             "
           >
+            <table
+              class="header row"
+              style="
+                width: 100%;
+                border-spacing: 0;
+                border-collapse: collapse;
+                margin: 40px 0 20px;
+              "
+            >
+              <tbody>
+                <tr>
+                  <td
+                    class="header__cell"
+                    style="
+                      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI',
+                        'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+                        'Droid Sans', 'Helvetica Neue', sans-serif;
+                    "
+                  >
+                    <center>
+                      <table
+                        class="container"
+                        style="
+                          width: 560px;
+                          text-align: left;
+                          border-spacing: 0;
+                          border-collapse: collapse;
+                          margin: 0 auto;
+                        "
+                      >
+                        <tbody>
+                          <tr>
+                            <td
+                              style="
+                                font-family: -apple-system, BlinkMacSystemFont,
+                                  'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+                                  'Cantarell', 'Fira Sans', 'Droid Sans',
+                                  'Helvetica Neue', sans-serif;
+                              "
+                            >
+                              <table
+                                class="row"
+                                style="
+                                  width: 100%;
+                                  border-spacing: 0;
+                                  border-collapse: collapse;
+                                "
+                              >
+                                <tbody>
+                                  <tr>
+                                    <td
+                                      class="shop-name__cell"
+                                      style="
+                                        font-family: -apple-system,
+                                          BlinkMacSystemFont, 'Segoe UI',
+                                          'Roboto', 'Oxygen', 'Ubuntu',
+                                          'Cantarell', 'Fira Sans', 'Droid Sans',
+                                          'Helvetica Neue', sans-serif;
+                                      "
+                                    >
+                                      {% if shop.email_logo_url %}
+                                      <img
+                                        src="{{ shop.email_logo_url }}"
+                                        alt="{{ shop.name }}"
+                                        width="{{ shop.email_logo_width }}"
+                                      />
+                                      {% else %}
+                                      <h1
+                                        class="shop-name__text"
+                                        style="
+                                          font-weight: normal;
+                                          font-size: 30px;
+                                          color: #333;
+                                          margin: 0;
+                                        "
+                                      >
+                                        <a
+                                          style="
+                                            font-size: 30px;
+                                            color: #333;
+                                            text-decoration: none;
+                                          "
+                                          >{{ shop.name }}</a
+                                        >
+                                      </h1>
+                                      {% endif %}
+                                    </td>
+
+                                    <td
+                                      style="
+                                        font-family: -apple-system,
+                                          BlinkMacSystemFont, 'Segoe UI',
+                                          'Roboto', 'Oxygen', 'Ubuntu',
+                                          'Cantarell', 'Fira Sans', 'Droid Sans',
+                                          'Helvetica Neue', sans-serif;
+                                      "
+                                    >
+                                      <table
+                                        class="order-po-number__container"
+                                        style="
+                                          border-spacing: 0;
+                                          border-collapse: collapse;
+                                          margin-left: auto;
+                                          margin-right: 0;
+                                        "
+                                      >
+                                        <tbody>
+                                          <tr>
+                                            <td
+                                              class="order-number__cell"
+                                              style="
+                                                font-family: -apple-system,
+                                                  BlinkMacSystemFont, 'Segoe UI',
+                                                  'Roboto', 'Oxygen', 'Ubuntu',
+                                                  'Cantarell', 'Fira Sans',
+                                                  'Droid Sans', 'Helvetica Neue',
+                                                  sans-serif;
+                                                text-transform: uppercase;
+                                                font-size: 14px;
+                                                color: #999;
+                                              "
+                                              align="right"
+                                            >
+                                              <span
+                                                class="order-number__text"
+                                                style="font-size: 16px"
+                                              >
+                                                Order {{ order.numberFormat }}
+                                              </span>
+                                            </td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </center>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
             <table
               class="row content"
               style="width: 100%; border-spacing: 0; border-collapse: collapse"
@@ -189,225 +311,143 @@
                                   'Helvetica Neue', sans-serif;
                               "
                             >
-                              <table
-                                align="center"
-                                class="row giftcard__topmargin"
+                              {% if payment_schedule.overdue? and
+                              payment_schedule.number_of_days_overdue == 0 %}
+                              <h2
                                 style="
-                                  width: 100%;
-                                  border-spacing: 0;
-                                  border-collapse: collapse;
-                                  margin-top: 10px;
+                                  font-weight: normal;
+                                  font-size: 24px;
+                                  margin: 0 0 10px;
                                 "
                               >
-                                <tbody>
-                                  <tr>
-                                    <td
-                                      class="giftcard__title"
-                                      style="
-                                        font-family: -apple-system,
-                                          BlinkMacSystemFont, 'Segoe UI',
-                                          'Roboto', 'Oxygen', 'Ubuntu',
-                                          'Cantarell', 'Fira Sans', 'Droid Sans',
-                                          'Helvetica Neue', sans-serif;
-                                        color: #000000;
-                                        font-size: 18px;
-                                        font-weight: 400;
-                                        line-height: 27px;
-                                      "
-                                      align="center"
-                                    >
-                                      Here's your gift card that was sent to
-                                      Bobby.
-                                    </td>
-                                  </tr>
-                                </tbody>
-                              </table>
-
-                              <table
-                                align="center"
-                                class="row giftcard__topmargin"
+                                Your payment is due today
+                              </h2>
+                              {% elsif payment_schedule.due_later? and
+                              payment_schedule.due_in_days == 0 %}
+                              <h2
                                 style="
-                                  width: 100%;
-                                  border-spacing: 0;
-                                  border-collapse: collapse;
-                                  margin-top: 10px;
+                                  font-weight: normal;
+                                  font-size: 24px;
+                                  margin: 0 0 10px;
                                 "
                               >
-                                <tbody>
-                                  <tr>
-                                    <td
-                                      class="giftcard__message"
-                                      style="
-                                        font-family: -apple-system,
-                                          BlinkMacSystemFont, 'Segoe UI',
-                                          'Roboto', 'Oxygen', 'Ubuntu',
-                                          'Cantarell', 'Fira Sans', 'Droid Sans',
-                                          'Helvetica Neue', sans-serif;
-                                        color: #000000;
-                                        font-size: 16px;
-                                        font-weight: 400;
-                                        line-height: 24px;
-                                      "
-                                      align="center"
-                                    >
-                                      "Wishing you a happy birthday filled with
-                                      joy, laughter, and all the things you
-                                      love. Have an amazing day!"
-                                    </td>
-                                  </tr>
-                                </tbody>
-                              </table>
-
-                              <table
-                                align="center"
-                                class="giftcard__topmargin"
+                                Your payment is due today
+                              </h2>
+                              {% elsif payment_schedule.overdue? and
+                              payment_schedule.number_of_days_overdue == 1 %}
+                              <h2
                                 style="
-                                  border-spacing: 0;
-                                  border-collapse: collapse;
-                                  margin-top: 10px;
+                                  font-weight: normal;
+                                  font-size: 24px;
+                                  margin: 0 0 10px;
                                 "
                               >
-                                <tbody>
-                                  <tr>
-                                    <td
-                                      class="giftcard__balance"
-                                      style="
-                                        font-family: -apple-system,
-                                          BlinkMacSystemFont, 'Segoe UI',
-                                          'Roboto', 'Oxygen', 'Ubuntu',
-                                          'Cantarell', 'Fira Sans', 'Droid Sans',
-                                          'Helvetica Neue', sans-serif;
-                                        color: #000000;
-                                        font-size: 24px;
-                                        font-weight: 500;
-                                        line-height: 36px;
-                                      "
-                                      align="center"
-                                    >
-                                      {{ gift_card.balance | default: 0 |
-                                      money_with_currency }}
-                                    </td>
-                                  </tr>
-                                </tbody>
-                              </table>
-
-                              <table
-                                align="center"
-                                class="giftcard__doubletopmargin"
+                                Your payment was due yesterday
+                              </h2>
+                              {% elsif payment_schedule.due_later? and
+                              payment_schedule.due_in_days == 1 %}
+                              <h2
                                 style="
-                                  border-spacing: 0;
-                                  border-collapse: collapse;
-                                  margin-top: 18px;
+                                  font-weight: normal;
+                                  font-size: 24px;
+                                  margin: 0 0 10px;
                                 "
                               >
-                                <tbody>
-                                  <tr>
-                                    <td
-                                      style="
-                                        font-family: -apple-system,
-                                          BlinkMacSystemFont, 'Segoe UI',
-                                          'Roboto', 'Oxygen', 'Ubuntu',
-                                          'Cantarell', 'Fira Sans', 'Droid Sans',
-                                          'Helvetica Neue', sans-serif;
-                                      "
-                                    >
-                                      <img
-                                        src="https://cdn.shopify.com/shopifycloud/shopify/assets/themes_support/gift-card/card-fd4b15ddcc3d3505fee3c54f36da76696244c344ddb6d22558b08bb8cf0cf9f9.jpg"
-                                        alt="Gift card image"
-                                        width="240"
-                                        height="160"
-                                      />
-                                    </td>
-                                  </tr>
-                                </tbody>
-                              </table>
-
-                              <table
-                                align="center"
-                                class="row giftcard__topmargin"
+                                Your payment is due tomorrow
+                              </h2>
+                              {% elsif payment_schedule.due_later? and
+                              payment_schedule.due_in_days > 1 %}
+                              <h2
                                 style="
-                                  width: 100%;
-                                  border-spacing: 0;
-                                  border-collapse: collapse;
-                                  margin-top: 10px;
+                                  font-weight: normal;
+                                  font-size: 24px;
+                                  margin: 0 0 10px;
                                 "
                               >
-                                <tbody>
-                                  <tr>
-                                    <td
-                                      class="giftcard__shop_name"
-                                      style="
-                                        font-family: -apple-system,
-                                          BlinkMacSystemFont, 'Segoe UI',
-                                          'Roboto', 'Oxygen', 'Ubuntu',
-                                          'Cantarell', 'Fira Sans', 'Droid Sans',
-                                          'Helvetica Neue', sans-serif;
-                                        color: #000000;
-                                        font-size: 22px;
-                                        font-weight: 300;
-                                        line-height: 26px;
-                                      "
-                                      align="center"
-                                    >
-                                      {{ shop.name }}
-                                    </td>
-                                  </tr>
-                                </tbody>
-                              </table>
-
-                              <table
-                                align="center"
-                                class="row giftcard__topmargin"
+                                Your payment is due in {{
+                                payment_schedule.due_in_days}} days
+                              </h2>
+                              {% else %}
+                              <h2
                                 style="
-                                  width: 100%;
-                                  border-spacing: 0;
-                                  border-collapse: collapse;
-                                  margin-top: 10px;
+                                  font-weight: normal;
+                                  font-size: 24px;
+                                  margin: 0 0 10px;
                                 "
                               >
-                                <tbody>
-                                  <tr>
-                                    <td
-                                      class="giftcard__smalltext"
-                                      style="
-                                        font-family: -apple-system,
-                                          BlinkMacSystemFont, 'Segoe UI',
-                                          'Roboto', 'Oxygen', 'Ubuntu',
-                                          'Cantarell', 'Fira Sans', 'Droid Sans',
-                                          'Helvetica Neue', sans-serif;
-                                        color: #737373;
-                                        font-size: 12px;
-                                        font-weight: 400;
-                                        line-height: 16px;
-                                      "
-                                      align="center"
-                                    >
-                                      Use the gift card code online
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <td
-                                      class="giftcard__code"
-                                      style="
-                                        font-family: -apple-system,
-                                          BlinkMacSystemFont, 'Segoe UI',
-                                          'Roboto', 'Oxygen', 'Ubuntu',
-                                          'Cantarell', 'Fira Sans', 'Droid Sans',
-                                          'Helvetica Neue', sans-serif;
-                                        color: #000000;
-                                        font-size: 18px;
-                                        font-weight: 400;
-                                        line-height: 20px;
-                                        letter-spacing: 2.5px;
-                                      "
-                                      align="center"
-                                    >
-                                      {{ gift_card.code | format_code }}
-                                    </td>
-                                  </tr>
-                                </tbody>
-                              </table>
-
+                                Your payment is {{
+                                payment_schedule.number_of_days_overdue }} days
+                                overdue
+                              </h2>
+                              {% endif %} {% if custom_message != blank %}
+                              <p
+                                style="
+                                  color: #777;
+                                  line-height: 150%;
+                                  font-size: 16px;
+                                  margin: 0;
+                                "
+                              >
+                                {{ custom_message }}
+                              </p>
+                              {% else %} {% if payment_schedule.overdue? and
+                              payment_schedule.number_of_days_overdue == 0 %}
+                              <p
+                                style="
+                                  color: #777;
+                                  line-height: 150%;
+                                  font-size: 16px;
+                                  margin: 0;
+                                "
+                              >
+                                This is a reminder that you have a payment of {{
+                                payment_schedule.amount_due | default: 0 |
+                                money_with_currency }} due today for order {{
+                                name }}.
+                              </p>
+                              {% elsif payment_schedule.due_later? %}
+                              <p
+                                style="
+                                  color: #777;
+                                  line-height: 150%;
+                                  font-size: 16px;
+                                  margin: 0;
+                                "
+                              >
+                                This is a reminder that your payment of {{
+                                payment_schedule.amount_due | default: 0 |
+                                money_with_currency }} for order {{ name }} is
+                                due on {{ payment_schedule.due_at | date: '%B
+                                %e, %Y' }}.
+                              </p>
+                              {% else %}
+                              <p
+                                style="
+                                  color: #777;
+                                  line-height: 150%;
+                                  font-size: 16px;
+                                  margin: 0;
+                                "
+                              >
+                                This is a reminder that your payment of {{
+                                payment_schedule.amount_due | default: 0 |
+                                money_with_currency }} for order {{ name }} was
+                                due on {{ payment_schedule.due_at | date: '%B
+                                %e, %Y' }}.
+                              </p>
+                              {% endif %}
+                              <p
+                                style="
+                                  color: #777;
+                                  line-height: 150%;
+                                  font-size: 16px;
+                                  margin: 0;
+                                "
+                              >
+                                Thank you.
+                              </p>
+                              {% endif %} {% if checkout_payment_collection_url
+                              %}
                               <table
                                 class="row actions"
                                 style="
@@ -430,11 +470,12 @@
                                       "
                                     >
                                       <table
-                                        align="center"
-                                        class="button"
+                                        class="button main-action-cell"
                                         style="
                                           border-spacing: 0;
                                           border-collapse: collapse;
+                                          float: left;
+                                          margin-right: 15px;
                                         "
                                       >
                                         <tbody>
@@ -462,45 +503,7 @@
                                                   color: #fff;
                                                   padding: 20px 25px;
                                                 "
-                                                >Visit online store</a
-                                              >
-                                            </td>
-                                          </tr>
-                                        </tbody>
-                                      </table>
-                                      <table
-                                        align="center"
-                                        class="button"
-                                        style="
-                                          border-spacing: 0;
-                                          border-collapse: collapse;
-                                        "
-                                      >
-                                        <tbody>
-                                          <tr>
-                                            <td
-                                              class="link__cell"
-                                              style="
-                                                font-family: -apple-system,
-                                                  BlinkMacSystemFont, 'Segoe UI',
-                                                  'Roboto', 'Oxygen', 'Ubuntu',
-                                                  'Cantarell', 'Fira Sans',
-                                                  'Droid Sans', 'Helvetica Neue',
-                                                  sans-serif;
-                                                border-radius: 4px;
-                                              "
-                                              align="center"
-                                            >
-                                              <a
-                                                class="link__text"
-                                                style="
-                                                  font-size: 16px;
-                                                  text-decoration: none;
-                                                  display: block;
-                                                  color: #1990c6;
-                                                  padding: 20px 25px;
-                                                "
-                                                >View gift card balance</a
+                                                >Pay now</a
                                               >
                                             </td>
                                           </tr>
@@ -510,6 +513,7 @@
                                   </tr>
                                 </tbody>
                               </table>
+                              {% endif %}
                             </td>
                           </tr>
                         </tbody>
@@ -570,7 +574,6 @@
                                   font-size: 14px;
                                   margin: 0;
                                 "
-                                align="center"
                               >
                                 If you have any questions, reply to this email
                                 or contact us at
@@ -580,6 +583,7 @@
                                     text-decoration: none;
                                     color: #1990c6;
                                   "
+                                  href="mailto:{{ shop.email }}"
                                   >{{ shop.email }}</a
                                 >
                               </p>
