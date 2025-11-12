@@ -641,19 +641,34 @@
                                                       "
                                                       valign="middle"
                                                     >
-                                                      <img
-                                                        src="{{ item.product.media[0].fileUrl }}"
-                                                        align="left"
-                                                        width="60"
-                                                        height="60"
-                                                        class="order-list__product-image"
-                                                        style="
-                                                          margin-right: 15px;
-                                                          border-radius: 8px;
-                                                          border: 1px solid
-                                                            #e5e5e5;
-                                                        "
-                                                      />
+                                                      {% if item.product.media[0] %}
+                                                        <img
+                                                          src="{{ item.product.media[0].fileUrl }}"
+                                                          align="left"
+                                                          width="60"
+                                                          height="60"
+                                                          class="order-list__product-image"
+                                                          style="
+                                                            margin-right: 15px;
+                                                            border-radius: 8px;
+                                                            border: 1px solid
+                                                              #e5e5e5;
+                                                          "
+                                                        />
+                                                      {% else %}
+                                                        <img
+                                                          src="https://cdn.shopify.com/shopifycloud/shopify/assets/themes_support/notifications/no-image-f4b31b80de3984c0c3892c3c35d946963547e11331187e92cfb4e95de761b69b.png"
+                                                          align="left"
+                                                          width="30"
+                                                          height="30"
+                                                          class="order-list__no-product-image"
+                                                          style="
+                                                            height: 30px;
+                                                            width: 30px;
+                                                            padding: 15px;
+                                                          "
+                                                        />
+                                                      {% endif %}
                                                     </td>
                                                   </tr>
                                                 </tbody>

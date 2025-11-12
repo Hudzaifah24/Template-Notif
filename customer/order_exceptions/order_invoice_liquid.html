@@ -585,8 +585,10 @@
                                                       "
                                                       valign="middle"
                                                     >
+                                                      {% if
+                                                      item.product.media[0] %}
                                                       <img
-                                                        src="{{ item.orderItem.product.media[0].fileUrl }}"
+                                                        src="{{ item.product.media[0].fileUrl }}"
                                                         align="left"
                                                         width="60"
                                                         height="60"
@@ -598,6 +600,20 @@
                                                             #e5e5e5;
                                                         "
                                                       />
+                                                      {% else %}
+                                                      <img
+                                                        src="https://cdn.shopify.com/shopifycloud/shopify/assets/themes_support/notifications/no-image-f4b31b80de3984c0c3892c3c35d946963547e11331187e92cfb4e95de761b69b.png"
+                                                        align="left"
+                                                        width="30"
+                                                        height="30"
+                                                        class="order-list__no-product-image"
+                                                        style="
+                                                          height: 30px;
+                                                          width: 30px;
+                                                          padding: 15px;
+                                                        "
+                                                      />
+                                                      {% endif %}
                                                     </td>
                                                   </tr>
                                                 </tbody>

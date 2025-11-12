@@ -515,7 +515,6 @@ been charged, please try paying for the order again. {% endcapture %}
                                         <tbody>
                                           <tr>
                                             <!-- product image -->
-                                            {% if item.product.image %}
                                             <td
                                               style="
                                                 padding-bottom: 0px;
@@ -551,8 +550,10 @@ been charged, please try paying for the order again. {% endcapture %}
                                                       "
                                                       valign="middle"
                                                     >
+                                                      {% if
+                                                      item.product.media[0] %}
                                                       <img
-                                                        src="{{ item.product.image.fileUrl }}"
+                                                        src="{{ item.product.media[0].fileUrl }}"
                                                         align="left"
                                                         width="60"
                                                         height="60"
@@ -564,79 +565,25 @@ been charged, please try paying for the order again. {% endcapture %}
                                                             #e5e5e5;
                                                         "
                                                       />
-                                                    </td>
-                                                  </tr>
-                                                </tbody>
-                                              </table>
-                                            </td>
-                                            {% else %}
-                                            <td
-                                              class="order-list__parent-image-cell"
-                                              style="
-                                                font-family: -apple-system,
-                                                  BlinkMacSystemFont, 'Segoe UI',
-                                                  'Roboto', 'Oxygen', 'Ubuntu',
-                                                  'Cantarell', 'Fira Sans',
-                                                  'Droid Sans', 'Helvetica Neue',
-                                                  sans-serif;
-                                                padding-bottom: 0;
-                                              "
-                                              valign="top"
-                                            >
-                                              <table
-                                                height="100%"
-                                                style="
-                                                  border-spacing: 0;
-                                                  border-collapse: collapse;
-                                                "
-                                              >
-                                                <tbody>
-                                                  <tr>
-                                                    <td
-                                                      class=""
-                                                      valign="top"
-                                                      style="
-                                                        font-family: -apple-system,
-                                                          BlinkMacSystemFont,
-                                                          'Segoe UI', 'Roboto',
-                                                          'Oxygen', 'Ubuntu',
-                                                          'Cantarell',
-                                                          'Fira Sans',
-                                                          'Droid Sans',
-                                                          'Helvetica Neue',
-                                                          sans-serif;
-                                                      "
-                                                    >
-                                                      <div
-                                                        class="order-list__no-image-cell"
+                                                      {% else %}
+                                                      <img
+                                                        src="https://cdn.shopify.com/shopifycloud/shopify/assets/themes_support/notifications/no-image-f4b31b80de3984c0c3892c3c35d946963547e11331187e92cfb4e95de761b69b.png"
+                                                        align="left"
+                                                        width="30"
+                                                        height="30"
+                                                        class="order-list__no-product-image"
                                                         style="
-                                                          border-radius: 8px;
-                                                          margin-right: 15px;
-                                                          height: 60px;
-                                                          width: 60px;
-                                                          border: 1px solid
-                                                            #e5e5e5;
+                                                          height: 30px;
+                                                          width: 30px;
+                                                          padding: 15px;
                                                         "
-                                                      >
-                                                        <img
-                                                          src="https://cdn.shopify.com/shopifycloud/shopify/assets/themes_support/notifications/no-image-f4b31b80de3984c0c3892c3c35d946963547e11331187e92cfb4e95de761b69b.png"
-                                                          align="left"
-                                                          width="30"
-                                                          height="30"
-                                                          class="order-list__no-product-image"
-                                                          style="
-                                                            height: 30px;
-                                                            width: 30px;
-                                                            padding: 15px;
-                                                          "
-                                                        />
-                                                      </div>
+                                                      />
+                                                      {% endif %}
                                                     </td>
                                                   </tr>
                                                 </tbody>
                                               </table>
                                             </td>
-                                            {% endif %}
 
                                             <td
                                               class="order-list__product-description-cell"
